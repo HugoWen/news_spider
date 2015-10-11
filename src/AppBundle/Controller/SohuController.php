@@ -20,7 +20,7 @@ class SohuController extends Controller
      * @Route("/", name="sohu_index")
      * @Template()
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $news = array();
 
@@ -31,7 +31,6 @@ class SohuController extends Controller
         }
 
         $ads = array();
-        $str = 'id, 内容, ';
 
         foreach ($news as $n) {
             if (isset($n['articles'])) {
