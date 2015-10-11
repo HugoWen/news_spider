@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜狐</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        .nowrap {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading" style="width: 100%;"><h4>搜狐首页</h4></div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed" id="main_table">
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>内容</td>
+                    <td>类型</td>
+                    <td>图片</td>
+                    <td>链接</td>
+                </tr>
+
+                {% for ad in ads %}
+                    <tr>
+                        <td>{{ ad.id }}</td>
+                        <td class="nowrap">{{ ad.text }}</td>
+                        <td class="nowrap">{{ ad.template_type_text }}</td>
+                        <td><a href="{{ ad.pic }}">{{ ad.pic }}</a></td>
+                        <td><a href="{{ ad.link }}">{{ ad.link }}</a></td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

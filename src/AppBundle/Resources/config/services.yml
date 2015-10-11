@@ -1,0 +1,4 @@
+services:
+    sohu:
+        class:     AppBundle\Util\SohuService
+        arguments: [@service_container]
