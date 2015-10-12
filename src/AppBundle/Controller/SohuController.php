@@ -44,10 +44,14 @@ class SohuController extends Controller
                             case 12 :
                                 $ad['template_type_text'] = '信息流-小图';
                                 break;
+                            case 13 :
+                                $ad['template_type_text'] = '信息流-小图';
+                                break;
                             case 14 :
                                 $ad['template_type_text'] = '信息流-大图';
                                 break;
                             default:
+                                $ad['template_type_text'] = $ad['template_type'];
                                 break;
                         }
                         $ad['pic'] = $article['data']['resource']['adcode'];
@@ -60,7 +64,7 @@ class SohuController extends Controller
                 }
             }
         }
-        
+        //ldd($ads);
         return array('ads' => $ads);
     }
 }

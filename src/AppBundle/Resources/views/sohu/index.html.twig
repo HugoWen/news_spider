@@ -14,10 +14,11 @@
 <div class="panel panel-default">
     <div class="panel-heading" style="width: 100%;"><h4>搜狐首页</h4></div>
     <div class="table-responsive">
-        <table class="table table-hover table-bordered table-condensed" id="main_table">
+        <table class="table table-hover table-bordered" id="main_table">
             <tbody>
                 <tr>
                     <td>id</td>
+                    <td class="nowrap">页码</td>
                     <td>内容</td>
                     <td>类型</td>
                     <td>图片</td>
@@ -27,6 +28,7 @@
                 {% for ad in ads %}
                     <tr>
                         <td>{{ ad.id }}</td>
+                        <td>{{ ad.page }}</td>
                         <td class="nowrap">{{ ad.text }}</td>
                         <td class="nowrap">{{ ad.template_type_text }}</td>
                         <td><a href="{{ ad.pic }}">{{ ad.pic }}</a></td>
