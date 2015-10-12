@@ -32,7 +32,7 @@ class SohuController extends Controller
 
         $ads = array();
 
-        foreach ($news as $n) {
+        foreach ($news as $page_id => $n) {
             if (isset($n['articles'])) {
                 foreach ($n['articles'] as $article) {
                     //判断广告
@@ -53,12 +53,14 @@ class SohuController extends Controller
                         $ad['pic'] = $article['data']['resource']['adcode'];
                         $ad['link'] = $article['data']['resource']['click'];
 
+                        $ad['page'] = $page_id;
+
                         $ads[] = $ad;
                     }
                 }
             }
         }
-
+        
         return array('ads' => $ads);
     }
 }
