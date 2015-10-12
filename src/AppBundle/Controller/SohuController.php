@@ -26,7 +26,6 @@ class SohuController extends Controller
 
         for ($i = 1; $i <= 10; $i++) {
             $index_url = $this->container->get('sohu')->sohuApiUrl(1, $i);
-            //$index_url = 'http://api.k.sohu.com/api/channel/v5/news.go?channelId=1&num=20&page=1&picScale=11&groupPic=1&supportTV=1&imgTag=1&supportSpecial=1&supportLive=1&showSdkAd=1&rt=json&from=channel&pull=0&mode=0&action=0&cdma_lng=121.425894&cdma_lat=31.131091&net=wifi&p1=NjA1MzE5MTUxMjI5NTM4NzE2MQ==&pid=-1&apiVersion=30&sid=10&buildCode=8&u=1&bid=Y29tLnNvaHUubmV3c3BhcGVy';
             $news[$i] = json_decode($this->container->get('sohu')->curlGetData($index_url), true);
         }
 
@@ -64,7 +63,7 @@ class SohuController extends Controller
                 }
             }
         }
-        //ldd($ads);
+
         return array('ads' => $ads);
     }
 }
