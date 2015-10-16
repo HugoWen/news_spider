@@ -17,21 +17,20 @@
         <table class="table table-hover table-bordered" id="main_table">
             <tbody>
                 <tr>
-                    <td></td>
+                    <td>id</td>
+                    <td class="nowrap">页码</td>
                     <td>内容</td>
                     <td>类型</td>
-                    <td class="nowrap">页码</td>
                     <td>图片</td>
                     <td>链接</td>
                 </tr>
 
                 {% for ad in ads %}
                     <tr>
-                        {#<td>{{ ad.id }}</td>#}
-                        <td>{{ loop.index }}</td>
+                        <td>{{ ad.id }}</td>
+                        <td>{{ ad.page }}</td>
                         <td class="nowrap">{{ ad.text }}</td>
                         <td class="nowrap">{{ ad.template_type_text }}</td>
-                        <td>{{ ad.page }}</td>
                         <td><a href="{{ ad.pic }}">{{ ad.pic }}</a></td>
                         <td><a href="{{ ad.link }}">{{ ad.link }}</a></td>
                     </tr>
